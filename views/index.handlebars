@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col s12 white">
+    <h4>Wellcome to Eat da Burger App</h4>
+  </div>
+  <div class="col s6">
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4>Burger ready to devour!</h4>
+      </li>
+      {{#each burger}}
+      {{#unless devoured}}
+
+      <li class="collection-item">
+        <div>
+          {{id}}
+          {{burger_name}}
+          <button class="btn-floating btn-small waves-effect waves-light red change-sleep secondary-content devour"
+            type="submit" data-id="{{id}}">
+            <i class="material-icons">local_dining</i>
+          </button>
+        </div>
+      </li>
+      {{/unless}}
+      {{/each}}
+    </ul>
+
+
+
+  </div>
+  <div class="col s6">
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4>Burgers devoured!</h4>
+      </li>
+      {{#each burger}}
+      {{#if devoured}}
+
+      <li class="collection-item">
+        <div>
+          {{id}}
+          {{burger_name}}
+          <a href="#!" class="secondary-content"><i class="material-icons">local_dining</i></a>
+        </div>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col s6 white">
+    <h4>Add a Burger</h4>
+    <form class="create-form">
+
+      <div class="form-group">
+        <label for="bur">Burger Name:</label>
+        <input type="text" id="bur" name="bur">
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+</div>
